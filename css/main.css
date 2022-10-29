@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;1,100;1,200;1,300;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --DarkBlue: #10172a;
+    --LigthBlue: #4e73de;
+    --LetterColor: #ffff;
+}
+
+body {
+    background: linear-gradient(to top, #19223b, #10172a);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    /* height: 100vh; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.img_escalab {
+    width: 300px;
+    height: 80px;
+}
+
+.appTitle {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    color: #ffff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 50px 0;
+    border-bottom: 2px solid var(--LetterColor);
+    gap: 30px;
+
+}
+
+.buttonTitle {
+    color: var(--LetterColor);
+    font-size: 2rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-weight: 400;
+    transform: scale(1);
+    transition: .5s ease-in-out;
+    letter-spacing: 20px;
+    line-height: 50px;
+}
+
+.buttonTitle:hover {
+    text-shadow: 0 0 1rem #4e73de;
+    transition: .5s ease-in-out;
+}
+
+.containInteractive {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.appForm {
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.appInput {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ffff;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--LetterColor);
+    font-size: 2rem;
+    padding-left: 20px;
+}
+
+.buttonSearch {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffff;
+    border-radius: 50%;
+    font-size: 2rem;
+    background: transparent;
+}
+
+.buttonSearch:hover {
+    background: #ffff;
+    cursor: pointer;
+}
+
+.AppSelect {
+    width: 40%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background: var(--DarkBlue);
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.AppTextSelect:hover {
+    background: rgba(255, 255, 255, 50%);
+}
+
+.AppSelect:hover {
+    height: 300px;
+    transition: .5s ease-in-out;
+}
+
+.AppTextSelect {
+    display: block;
+    width: 80%;
+    height: 50px;
+    border-radius: 15px;
+    border: 2px solid #ffff;
+    background: var(--DarkBlue);
+    font-size: 1.6rem;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+}
+
+.textSelect {
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    border: 0;
+    background: transparent;
+    color: var(--LetterColor);
+    border-bottom: 1px solid rgb(119, 119, 119);
+}
+
+.textSelect:hover {
+    background: var(--LigthBlue);
+    cursor: pointer;
+}
+
+.contain__cards {
+    width: 70%;
+    max-width: 1000px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+@media (max-width: 1000px) {
+    .appTitle {
+        font-size: 1.6rem;
+    }
+
+    .containInteractive {
+        flex-direction: column;
+    }
+
+    .appForm {
+        width: 100%;
+    }
+
+    .AppSelect {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .appTitle {
+        width: 80%;
+    }
+
+    .contain__cards {
+        gap: 15px;
+    }
+
+    .img_escalab {
+        width: 200px;
+    }
+
+    .buttonTitle {
+        font-size: 2rem;
+    }
+
+    .headerContent {
+        gap: 5px;
+    }
+
+}
