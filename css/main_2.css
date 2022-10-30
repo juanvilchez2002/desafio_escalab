@@ -1,0 +1,69 @@
+:root{
+    --color-bg: #9d9a9a;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000000;
+}
+
+
+html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.container{
+    width: 80%;
+    margin: 0px auto;
+}
+
+/* formato imagen */
+.img-fluid{
+    width: 100%;
+}
+
+/* narvar*/
+.navbar{
+    background-color: var(--color-bg-secondary);
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Filtros */
+.filtro-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* main */
+.grid-main{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem; 
+}
+
+/* card */
+.card{
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.5rem;
+}
+
+.card img{    
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
