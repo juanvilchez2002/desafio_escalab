@@ -1,6 +1,12 @@
-const banderas = document.querySelector('#banderas');
 
-/* llamda de la toda la api*/
+const bandera = document.getElementById("banderas");
+
+/* obteniendo el nombre del pais pasado por parametro */
+const queryCountry = new URLSearchParams(window.location.search);
+const params = queryCountry.get('name').toLocaleLowerCase();
+
+/* realizando la consulta a la API */
+
 document.addEventListener("DOMContentLoaded", function(event) {
     /* DOMContentLoaded -> cargara el API cuando se levante la pagina */
     fetchData();
@@ -9,13 +15,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 /* consumo de la API*/
 const fetchData = async () => {
     try {
-        const res = await fetch('https://restcountries.com/v3.1/all');
+        const res = await fetch(`https://restcountries.com/v3.1/name/${params}`);
         const data = await res.json();
-        console.log(data);
         banderillas(data);
-
-        formularioReal(data); // activa formulario search
-        filtrarRegion(data) // activa filtros region
 
     }catch (error) {
         console.log(error)
@@ -48,7 +50,7 @@ const banderillas = (data) => {
                         ${elem.region}
                     </p>                    
                     <p>
-                        <a href="pais-consultado.html?name=${elem.name.common}">
+                        <a href="pais-consultado.html?${elem.name.common}">
                             Más información...
                         </a>
                     </p>
@@ -61,30 +63,3 @@ const banderillas = (data) => {
     banderas.innerHTML = elementos;
 
 }
-
-/* busqueda por formulario */
-
-const formulario = document.getElementById("formulario");
-const formularioConsulta = document.getElementById("inputFormulario");
-
-const formularioReal = data =>{
-    /* escuchando el evento del input */
-
-    document.addEventListener('keyup', e =>{
-        e.preventDefault();
-
-        const paisConsultado = formularioConsulta.value.toLowerCase();
-        //console.log(paisConsultado);
-
-        /* filtrar por país */
-        const paisFiltrado = data.filter(item =>{
-            const pais = item.name.common.toLowerCase();
-            if(pais.indexOf(paisConsultado)!==-1){
-                return item;
-            }
-        })
-        banderillas(paisFiltrado);
-    })
-}
-
-/* filtrar por region */
