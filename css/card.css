@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+:root{
+    --blue: #10172A;
+    --white: #FFF;
+    --blueLigth: rgba(79,103,168,.6);
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .content_card{
+    width: 80%;
+    height: 350px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid var(--white);
+    box-shadow: 0 0 1rem rgb(85, 84, 84);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* card */
+  .card1{
+    width: 100%;
+    height: 350px;
+    border: 1px solid #FFF;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgba(58, 58, 58, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+  }
+
+  .card1_text{
+    width: 50%;
+    font-size: 40px;
+    color:#000;
+  }
+
+  .card1_info{
+    width: 50%;
+    height: 350px;
+    background: var(--blueLigth);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .card1_img{
+    border-radius: 15%;
+    width: 60%;
+  }
+
+  .card1_link{
+    display: block;
+    line-height: 50px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #fff;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: var(--blue);
+    border-radius: 5px;
+  }
+
+  .card1_link{
+    display: block;
+    line-height: 50px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #fff;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    background: rgb(101, 99, 99);
+    border-radius: 5px;
+  }
+
+  .card1_link:hover{
+    box-shadow: 0 0 .5rem #fff;
+  }
+
+  @media (max-width: 550px) {
+    
+    .card1{
+        flex-direction: column;
+    }
+
+    .card1_text{
+        width: 100%;
+    }
+    
+    .card1_info{  
+        width: 100%;
+
+    }
+}

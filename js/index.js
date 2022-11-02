@@ -30,32 +30,32 @@ const banderillas = (data) => {
    /* recorrer el consumo de la API y dibujar las cards*/
 
     data.forEach(elem => {
-        elementos += `
-            <div class="card">
-            <img src="${elem.flags.png}" alt="Bandera ${elem.name.common}" class="img-fluid">
-                <div class="card-content">
-                    <h3>${elem.name.common}</h3>
-                    <p>
-                        <b>Population: </b>
-                        ${elem.population}
+        elementos +=
+        `
+        <section class="content_card">
+            <div class="card1">
+                <h1 class="card1_text">
+                    ${elem.name.common}
+                </h1>
+                <div class="card1_info">
+                    <img src="${elem.flags.png}" alt="Bandera ${elem.name.common}" class="card1_img">
+                    <h3 class="card1_title">
+                        Capital: ${elem.capital}
+                    </h3>
+                    <p class="card1_subtitle">
+                        Población: ${elem.population}
                     </p>
-                    <p>
-                        <b>Capital: </b>
-                        ${elem.capital}
+                    <p class="card1_subtitle">
+                        Region: ${elem.region}
                     </p>
-                    <p>
-                        <b>Region: </b>
-                        ${elem.region}
-                    </p>                    
-                    <p>
-                        <a href="pais-consultado.html?name=${elem.name.common}">
-                            Más información...
-                        </a>
-                    </p>
-                    
+                    <a href="pais-consultado.html?name=${elem.name.common}" class="card1_link">
+                        Más info
+                    </a>
                 </div>
             </div>
+        </section>
             `
+
     });
 
     banderas.innerHTML = elementos;
